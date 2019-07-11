@@ -18,12 +18,12 @@ function getResult(a,b,c){
     d = Math.pow(b, 2) - 4 * a * c;
 
     if (d < 0){
-        x = "корней нет";
+        x[0] = "корней нет";
     }else if (d > 0){
         x[0] = (-b + Math.pow(d, 0.5)) / (2 * a);
         x[1] = (-b - Math.pow(d, 0.5)) / (2 * a);
     }else if (d === 0){
-        x = -b / ( 2 * a);
+        x[0] = -b / ( 2 * a);
     };
     return x;
 }
@@ -49,7 +49,7 @@ function getAverageMark(marks){
         marksSum = marksSum + mark;
     };
 
-    averageMark = marksSum / 5;
+    averageMark = marksSum / marks.length;
 
     return averageMark;
 }
@@ -75,7 +75,7 @@ function askDrink(name,dateOfBirthday){
         result = `Сожалею, ${name}, но я не могу вам продать алкоголь. Зато могу предложить вам замечательный клюквенный компот!`;
     }else{
         result = `Не желаете ли олд-фэшн, ${name}?`
-    }
+    };
 
     console.log(result);
 
