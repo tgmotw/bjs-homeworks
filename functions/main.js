@@ -16,6 +16,8 @@ function getSolutions(a, b, c){
     };
 };
 
+console.log(`Задача №1`);
+
 function showSolutionsMessage(a, b, c){
     let result = getSolutions(a, b, c);
 
@@ -84,31 +86,32 @@ function getAverageScore(data){
     return personAverageScore;
 };
 
+console.log(`Задача №2`);
+
 let data = {algebra: [2, 4, 5, 2, 3, 4],
             geometry: [2, 4, 5, 2],
             english: [3, 4, 5, 5]};
 
 let result = getAverageScore(data);
 for (let key in result){
+    if (key === `totalAverage`){
+        console.log(`Общий средний бал: ${result[key]}`)
+    }else{
     console.log(`Предмет: ${key}, средний бал: ${result[key]}`);
+    };
 };
 
 ///////////////////////////////////////////////////////////////////
 //Задание №3
 function getPersonData(secretData){
     let firstName, lastName;
-    if (secretData.aaa === 0){
-        firstName = "Родриго";
-    }else{
-        firstName = "Эмилио";
-    };
-    if (secretData.bbb === 0){
-        lastName = "Родриго";
-    }else{
-        lastName = "Эмилио";
-    };
+    secretData.aaa === 0 ? firstName = "Родриго" : firstName = "Эмилио";
+    secretData.bbb === 0 ? lastName = "Родриго" : lastName = "Эмилио";
+
     return {firstName: firstName, lastName: lastName};
 };
+
+console.log(`Задача №3`);
 
 let secretData = {aaa: 1, bbb: 1};
 console.log(getPersonData(secretData));
